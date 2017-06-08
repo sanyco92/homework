@@ -7,7 +7,7 @@ public abstract class BaseScreen {
     private String username;
     private IOSDriver driver;
 
-    public abstract void getTitle();
+    public abstract String getTitle(IOSDriver driver);
 
     public void goBack(IOSDriver driver) {
         WebElement backBtn = driver.findElement(By.name("Back"));
@@ -17,9 +17,4 @@ public abstract class BaseScreen {
     public void setUsername(String username) {
         this.username = username;
     }
-
-    public static void main(String[] args) {
-        System.out.println(projectName);
-    }
-
 }

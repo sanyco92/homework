@@ -1,20 +1,22 @@
-import io.appium.java_client.ios.IOSDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 
-public abstract class BaseScreen {
-    public static final String projectName = "My Application";
-    private String username;
-    private IOSDriver driver;
+public class BaseScreen {
 
-    public abstract String getTitle(IOSDriver driver);
+    AppiumDriver<MobileElement> driver;
+    boolean ios = false;
+    boolean android = false;
 
-    public void goBack(IOSDriver driver) {
-        WebElement backBtn = driver.findElement(By.name("Back"));
-        backBtn.click();
+    public BaseScreen(AppiumDriver<MobileElement> driver) {
+        this.driver = driver;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void getPlatofrmName() {
+        String platformName = (String) driver.getCapabilities().getCapability("platformName");
+        if (platformName.equals("Android")) {
+            android = true;
+        } else {
+            ios = true;
+        }
     }
 }

@@ -2,14 +2,16 @@ package hometask2;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import static org.testng.Assert.assertEquals;
@@ -19,11 +21,23 @@ import static org.testng.Assert.assertEquals;
  */
 public class ContactsListTest {
 
+    private static IOSDriver<MobileElement> driver;
+
+    @BeforeTest
+    private void preconditions() throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.3");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 6");
+        //capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
+        capabilities.setCapability(MobileCapabilityType.APP, "/Users/aleksandr.kot/Documents/Projects/apiumStart/app/iOS/ContactsSimulator.app");
+        capabilities.setCapability(MobileCapabilityType.FULL_RESET, "false");
+        driver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+    }
+
     @Test
     public void openContact() throws MalformedURLException {
 
-        Capabilities capabilities = new Capabilities();
-        IOSDriver driver = new IOSDriver(capabilities.getServerURL(), capabilities.getCapabilities());
         WebDriverWait webDriverWait = new WebDriverWait(driver, 4);
         MobileElement contactName;
         ArrayList<String> listOfNames = new ArrayList<String>();

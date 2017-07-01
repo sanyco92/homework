@@ -1,9 +1,11 @@
+package hometask2.pageobjects;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-class ContactsListPage extends BaseScreen {
+public class ContactsListScreen extends BaseScreen {
 
-    public ContactsListPage(AppiumDriver driver) {
+    public ContactsListScreen(AppiumDriver driver) {
         super(driver);
     }
 

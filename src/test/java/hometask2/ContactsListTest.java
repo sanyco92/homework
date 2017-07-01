@@ -29,7 +29,7 @@ public class ContactsListTest {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.3");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 6");
-        //capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
+        //hometask2.capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
         capabilities.setCapability(MobileCapabilityType.APP, "/Users/aleksandr.kot/Documents/Projects/apiumStart/app/iOS/ContactsSimulator.app");
         capabilities.setCapability(MobileCapabilityType.FULL_RESET, "false");
         driver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);

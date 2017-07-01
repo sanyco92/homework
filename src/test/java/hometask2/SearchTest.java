@@ -1,5 +1,6 @@
 package hometask2;
 
+import hometask2.capabilities.Capabilities;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import static org.testng.Assert.assertTrue;

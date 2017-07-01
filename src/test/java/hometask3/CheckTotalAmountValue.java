@@ -1,18 +1,23 @@
+package hometask3;
+
 import capabilities.Capabilities;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pageobjects.MainPage;
-import pageobjects.SettingsPage;
+import hometask3.pageobjects.MainPage;
+import hometask3.pageobjects.SettingsPage;
 
 import java.net.MalformedURLException;
 import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.testng.AssertJUnit.assertEquals;
 
 /**
@@ -42,11 +47,11 @@ public class CheckTotalAmountValue {
             Capabilities capabilities = new Capabilities();
             driver = new AndroidDriver<MobileElement>(capabilities.getServerURL(), capabilities.getAndroidCapabilities());
         }
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, SECONDS);
     }
 
     @Test
-    public void checkTotalAmountValue() {
+    public void checkTotalAmountValue() throws InterruptedException {
 
         Integer tipPercentage = generateRandomNumber(TIP_PERCENTAGE_MAX_VALUE);
         Integer checkAmount = generateRandomNumber(CHECK_AMOUNT_MAX_VALUE);

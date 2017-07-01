@@ -26,11 +26,14 @@ public class Capabilities {
     public DesiredCapabilities getIOSCapabilities() {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        File classpathRoot = new File(System.getProperty("user.dir"));
+        File appDir = new File(classpathRoot, "/app/iOS");
+        File app = new File(appDir, "FasTip.app");
         capabilities.setCapability(PLATFORM_NAME, "iOS");
         capabilities.setCapability(PLATFORM_VERSION, "10.3");
         capabilities.setCapability(DEVICE_NAME, "iPhone 6");
-        capabilities.setCapability(APP, "/Users/aleksandr.kot/Documents/Projects/fasTip/app/iOS/fasTip.app");
         capabilities.setCapability(FULL_RESET, "false");
+        capabilities.setCapability(APP, app.getAbsolutePath());
         capabilities.setCapability("bootstrapPath", "/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent");
         capabilities.setCapability("agentPath", "/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/WebDriverAgent.xcodeproj");
         return capabilities;

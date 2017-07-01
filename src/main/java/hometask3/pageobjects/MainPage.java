@@ -1,4 +1,4 @@
-package pageobjects;
+package hometask3.pageobjects;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

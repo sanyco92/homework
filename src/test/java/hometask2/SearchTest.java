@@ -39,7 +39,7 @@ public class SearchTest {
     public void searchNegativeTest () throws MalformedURLException {
         Capabilities capabilities = new Capabilities();
         IOSDriver driver = new IOSDriver(capabilities.getServerURL(), capabilities.getCapabilities());
-        WebDriverWait wait = new WebDriverWait(driver, 4);
+        //WebDriverWait wait = new WebDriverWait(driver, 4);
 
         String searchName = "JKL:!@$JASLD:!@_)%";
         String resultName;

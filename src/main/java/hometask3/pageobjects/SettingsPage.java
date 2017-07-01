@@ -1,6 +1,5 @@
-package pageobjects;
+package hometask3.pageobjects;
 
-import com.sun.scenario.Settings;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;

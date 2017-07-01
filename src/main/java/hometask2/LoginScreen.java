@@ -1,11 +1,10 @@
-import com.sun.javafx.tools.packager.Log;
-import com.sun.xml.internal.rngom.parse.host.Base;
+package hometask2;
+
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 

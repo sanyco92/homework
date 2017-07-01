@@ -1,3 +1,5 @@
+package hometask2;
+
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
